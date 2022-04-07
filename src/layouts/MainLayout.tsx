@@ -25,8 +25,12 @@ export default function MainLayout(props: Props) {
     setCollapsed(!collapsed)
   }
 
-  const handleOnClickListCandidate = () => {
+  const handleOnClickListCustomer = () => {
     navigate("/customerlist")
+  }
+
+  const handleOnClickListBill = () => {
+    navigate("/billlist")
   }
 
   return (
@@ -54,11 +58,6 @@ export default function MainLayout(props: Props) {
         </div>
       </Header>
       <Content>
-        <Breadcrumb>
-          <Breadcrumb.Item>Trang Chủ</Breadcrumb.Item>
-          <Breadcrumb.Item>Quản Lý Tiền Điện</Breadcrumb.Item>
-          <Breadcrumb.Item>Danh Sách Khách Hàng</Breadcrumb.Item>
-        </Breadcrumb>
         <Layout>
           <Sider
             className="site-layout-background"
@@ -72,15 +71,15 @@ export default function MainLayout(props: Props) {
               defaultOpenKeys={["sub1"]}
               className="sider-menu"
             >
-              <SubMenu
-                key="sub1"
-                icon={<UserOutlined />}
-                title="Quản Lý Ứng Viên"
-              >
-                <Item key="1" onClick={handleOnClickListCandidate}>
+              <SubMenu key="sub1" title="Theo Dõi Khách Hàng">
+                <Item key="1" onClick={handleOnClickListCustomer}>
                   Danh Sách Khách Hàng
                 </Item>
-                <Item key="2">Thêm Sửa Xóa</Item>
+              </SubMenu>
+              <SubMenu key="sub2" title="Xem Hóa Đơn">
+                <Item key="2" onClick={handleOnClickListBill}>
+                  Danh Sách Hóa Đơn
+                </Item>
               </SubMenu>
             </Menu>
           </Sider>
