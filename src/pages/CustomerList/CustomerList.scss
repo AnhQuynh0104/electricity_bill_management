@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  &-edit {
+    margin-right: 20px;
+    background-color: #008cba;
+  }
+  &-remove {
+    background-color: #f44336;
+  }
+  &-view {
+    background-color: #4caf50;
+    margin-right: 20px;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loginThunk } from "./Login.thunks"
-import { useHistory } from "react-router-dom"
 import { PATH } from "src/constants/paths"
 
 function Login() {
@@ -9,14 +8,14 @@ function Login() {
   const { isAuthenticated } = useSelector((state: AppState) => state.app)
 
   const dispatch = useDispatch()
-  const history = useHistory()
+  //const history = useHistory()
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  useEffect(() => {
-    if (isAuthenticated) history.push(PATH.HOME)
-  }, [isAuthenticated, history])
+  // useEffect(() => {
+  //   if (isAuthenticated) history.push(PATH.HOME)
+  // }, [isAuthenticated, history])
 
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
