@@ -32,7 +32,15 @@ export default function MainLayout(props: Props) {
   const handleOnClickListBill = () => {
     navigate("/billlist")
   }
-
+  const handleOnClickElectricInfo = () => {
+    navigate("/electricinfo")
+  }
+  const handleOnClickPayGate = () => {
+    navigate("/paygate")
+  }
+  const handleOnCLickEmailCustomer = () => {
+    navigate("/emailtocustomer")
+  }
   return (
     <Layout>
       <Header className="header">
@@ -79,6 +87,19 @@ export default function MainLayout(props: Props) {
               <SubMenu key="sub2" title="Xem Hóa Đơn">
                 <Item key="2" onClick={handleOnClickListBill}>
                   Danh Sách Hóa Đơn
+                </Item>
+              </SubMenu>
+              <SubMenu key="sub3" title="Đóng tiền điện">
+                <Item key="1" onClick={handleOnClickElectricInfo}>
+                  Thông tin tiền điện tháng này
+                </Item>
+                <Item key="2" onClick={handleOnClickPayGate}>
+                  Cổng thanh toán
+                </Item>
+              </SubMenu>
+              <SubMenu key="sub4" title="Chăm sóc khách hàng">
+                <Item key="1" onClick={handleOnCLickEmailCustomer}>
+                  Thông báo cho khách hàng qua mail
                 </Item>
               </SubMenu>
             </Menu>
