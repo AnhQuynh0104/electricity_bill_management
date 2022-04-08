@@ -10,7 +10,7 @@ interface Person {
   name: string
   age: number
   address: string
-  status: string
+  school: string
   gmail: string
 }
 
@@ -19,101 +19,143 @@ const CustomerList = () => {
     {
       key: "1",
       id: 1,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Đã đóng",
+      name: "Nguyen Quynh Anh",
+      age: 32,
+      address: "New York No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     },
     {
       key: "2",
       id: 2,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Đã đóng",
+      name: "Jim",
+      age: 42,
+      address: "London No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     },
     {
       key: "3",
+      name: "Joe",
       id: 3,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Đã đóng",
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     },
     {
       key: "4",
+      name: "Joe",
       id: 4,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Chưa đóng",
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     },
     {
       key: "5",
+      name: "Joe",
       id: 5,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Đã đóng",
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     },
     {
       key: "6",
+      name: "Joe",
       id: 6,
-      name: "Nguyễn Quỳnh Anh",
-      age: 22,
-      address: "Gia Lâm, Hà Nội",
-      status: "Đã đóng",
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
+      gmail: "abc@gmail.com"
+    },
+    {
+      key: "7",
+      name: "Joe",
+      id: 7,
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
+      gmail: "abc@gmail.com"
+    },
+    {
+      key: "8",
+      name: "Joe",
+      id: 8,
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
+      gmail: "abc@gmail.com"
+    },
+    {
+      key: "9",
+      name: "Joe",
+      id: 9,
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
+      gmail: "abc@gmail.com"
+    },
+    {
+      key: "10",
+      name: "Joe",
+      id: 10,
+      age: 32,
+      address: "Sidney No. 1 Lake Park",
+      school: "Ha Noi",
       gmail: "abc@gmail.com"
     }
   ]
 
   const columns: ColumnsType<Person> = [
     {
-      title: "Tên",
+      title: "Name",
       dataIndex: "name",
-      width: 30,
+      width: 50,
       fixed: "left"
     },
     {
-      title: "Tuổi",
+      title: "Age",
       dataIndex: "age",
       width: 20
     },
     {
-      title: "Địa chỉ",
+      title: "Address",
       dataIndex: "address",
-      width: 50
+      width: 70
     },
     {
-      title: "Trạng thái",
-      dataIndex: "status",
-      width: 30
+      title: "School",
+      dataIndex: "school",
+      width: 70
     },
     {
       title: "Gmail",
       dataIndex: "gmail",
-      width: 40
+      width: 70
     },
     {
       title: "Action",
       key: "operation",
-
-      width: 20,
+      fixed: "right",
+      width: 55,
       render: (text, record) => (
         <div>
+          <button
+            className="btn btn-view"
+            onClick={() => viewCandidateDetail()}
+          >
+            {"View"}
+          </button>
           <button className="btn btn-edit" onClick={() => console.log(record)}>
-            {"Sửa"}
+            {"Edit"}
           </button>
           <button
             className="btn btn-remove"
             onClick={() => console.log(record)}
           >
-            {"Xóa"}
+            {"Remove"}
           </button>
         </div>
       )

@@ -3,7 +3,8 @@ import { Layout, Menu, Breadcrumb, Dropdown } from "antd"
 import {
   UserOutlined,
   MenuFoldOutlined,
-  MenuUnfoldOutlined
+  MenuUnfoldOutlined,
+  ControlOutlined
 } from "@ant-design/icons"
 import "./MainLayout.scss"
 import { useNavigate } from "react-router-dom"
@@ -25,12 +26,14 @@ export default function MainLayout(props: Props) {
     setCollapsed(!collapsed)
   }
 
-  const handleOnClickListCustomer = () => {
+  const handleOnClickListCandidate = () => {
     navigate("/customerlist")
   }
-
-  const handleOnClickListBill = () => {
-    navigate("/billlist")
+  const handleOnclickRegister = () =>{
+    navigate("/register")
+  }
+  const handleOnclickUpdate = () =>{
+    navigate("/updateElectric")
   }
 
   return (
@@ -58,6 +61,11 @@ export default function MainLayout(props: Props) {
         </div>
       </Header>
       <Content>
+        <Breadcrumb>
+          <Breadcrumb.Item>Trang Chủ</Breadcrumb.Item>
+          <Breadcrumb.Item>Quản Lý Tiền Điện</Breadcrumb.Item>
+          <Breadcrumb.Item>Đăng Kí Dùng Điện </Breadcrumb.Item>
+        </Breadcrumb>
         <Layout>
           <Sider
             className="site-layout-background"
@@ -71,14 +79,26 @@ export default function MainLayout(props: Props) {
               defaultOpenKeys={["sub1"]}
               className="sider-menu"
             >
-              <SubMenu key="sub1" title="Theo Dõi Khách Hàng">
-                <Item key="1" onClick={handleOnClickListCustomer}>
+              <SubMenu
+                key="sub1"
+                icon={<UserOutlined />}
+                title="Quản Lý Ứng Viên"
+              >
+                <Item key="1" onClick={handleOnClickListCandidate}>
                   Danh Sách Khách Hàng
                 </Item>
+                <Item key="2">Thêm Sửa Xóa</Item>
               </SubMenu>
-              <SubMenu key="sub2" title="Xem Hóa Đơn">
-                <Item key="2" onClick={handleOnClickListBill}>
-                  Danh Sách Hóa Đơn
+              <SubMenu
+                key="sub2"
+                icon={<ControlOutlined />}
+                title="Quản lý dùng điện"
+              >
+                <Item key="3" onClick={handleOnclickRegister}>
+                Đăng Kí Dùng Điện
+                </Item>
+                <Item key="4" onClick={handleOnclickUpdate}>
+                Cập Nhật Số Điện
                 </Item>
               </SubMenu>
             </Menu>
