@@ -6,7 +6,7 @@ const Login = lazy(() => import("src/pages/Login/Login"))
 const Home = lazy(() => import("src/pages/Home/Home"))
 const CustomerList = lazy(() => import("src/pages/CustomerList/CustomerList"))
 const BillList = lazy(() => import("src/pages/BillList/BillList"))
-
+const ElectricInfo = lazy(() => import("src/pages/Electric/ElectricInfo"))
 const routeList: RouteObject[] = [
   {
     path: PATH.LOGIN,
@@ -23,6 +23,10 @@ const routeList: RouteObject[] = [
   {
     path: PATH.BILLLIST,
     element: <BillList />
+  },
+  {
+    path: PATH.ELECTRICINFO,
+    element: <ElectricInfo />
   }
 ]
 export default function Routes() {

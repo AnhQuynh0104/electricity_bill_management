@@ -90,15 +90,15 @@ export default function MainLayout(props: Props) {
                 </Item>
               </SubMenu>
               <SubMenu key="sub3" title="Đóng tiền điện">
-                <Item key="1" onClick={handleOnClickElectricInfo}>
+                <Item key="3" onClick={handleOnClickElectricInfo}>
                   Thông tin tiền điện tháng này
                 </Item>
-                <Item key="2" onClick={handleOnClickPayGate}>
+                <Item key="4" onClick={handleOnClickPayGate}>
                   Cổng thanh toán
                 </Item>
               </SubMenu>
               <SubMenu key="sub4" title="Chăm sóc khách hàng">
-                <Item key="1" onClick={handleOnCLickEmailCustomer}>
+                <Item key="5" onClick={handleOnCLickEmailCustomer}>
                   Thông báo cho khách hàng qua mail
                 </Item>
               </SubMenu>
